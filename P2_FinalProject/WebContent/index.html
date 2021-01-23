@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Page</title>
+</head>
+<body>
+
+<h1>Admin Main Management Page</h1>
+
+<!-- SUBJECT FORM -->
+<h2>MANAGE SUBJECTS</h2>
+<div class="subjectdiv">
+<form action="SubjectServlet">
+<b>ADD SUBJECT</b><br/>
+SubjectID : <input type = "text" name = "subjectid"/> <br/>
+SubjectName : <input type = "text" name = "subjectname"/> <br/>
+
+<input type="submit" name="addsubjectbutton" value="Add"/>	
+
+</form>
+
+<form action="SubjectServlet">
+<br/>
+<b>UPDATE SUBJECT</b><br/>
+SubjectID : <input type = "text" name = "subjectidupdate"/> <br/>
+SubjectName : <input type = "text" name = "subjectnameupdate"/> <br/>
+
+<input type="submit" name="updatesubjectbutton" value="Update"/>	
+
+</form>
+
+<form action="SubjectServlet">
+<br/>
+<b>DELETE SUBJECT</b><br/>
+SubjectID : <input type = "text" name = "subjectiddelete"/> <br/>
+
+<input type="submit" name="deletesubjectbutton" value="Delete"/>
+<br/>
+<br/>
+<button name="displayallsubjects" type="submit" value="Display All Subjects">Display All Subjects</button>
+
+</form>
+</div>
+
+<!-- TEACHER FORM -->
+<h2>MANAGE TEACHERS</h2>
+<div class="teacherdiv">
+<form action="TeacherServlet">
+<b>ADD TEACHER</b><br/>
+TeacherID : <input type = "text" name = "teacherid"/> <br/>
+TeacherFname : <input type = "text" name = "teacherfname"/> <br/>
+TeacherLname : <input type = "text" name = "teacherlname"/> <br/>
+
+<input type="submit" name="addteacherbutton" value="Add"/>	
+
+</form>
+<br/>
+<form action="TeacherServlet">
+<b>UPDATE TEACHER</b><br/>
+TeacherID : <input type = "text" name = "teacheridupdate"/> <br/>
+TeacherFname : <input type = "text" name = "teacherfnameupdate"/> <br/>
+TeacherLname : <input type = "text" name = "teacherlnameupdate"/> <br/>
+
+<input type="submit" name="updateteacherbutton" value="Update"/>	
+
+</form>
+<br/>
+<form action="TeacherServlet">
+<b>DELETE TEACHER</b><br/>
+TeacherID : <input type = "text" name = "teacheriddelete"/> <br/>
+
+<input type="submit" name="deleteteacherbutton" value="Delete"/>	
+<br/>
+<br/>
+<button name="displayallteachers" type="submit" value="Display All Teachers">Display All Teachers</button>
+
+</form>
+
+</div>
+
+<!-- CLASSES FORM -->
+<h2>MANAGE CLASSES</h2>
+<div class="classesdiv">
+<form action="ClassesServlet" method="get">
+<b>ADD CLASS</b><br/>
+ClassID : <input type = "text" name = "classesidinitial"/> <br/>
+ClassName : <input type = "text" name = "classnameinitial"/> <br/>
+
+<input type="submit" name="initialaddclassesbutton" value="Add"/>	
+
+</form>
+<br/>
+<form action="ClassesServlet" method="get">
+<b>UPDATE CLASS</b><br/>
+ClassID : <input type = "text" name = "classidupdate"/> <br/>
+ClassName : <input type = "text" name = "classnameupdate"/> <br/>
+
+<input type="submit" name="updateclassesbutton" value="Update"/>	
+
+</form>
+<br/>
+<form action="ClassesServlet">
+<b>DELETE CLASS</b><br/>
+ClassID : <input type = "text" name = "classiddelete"/> <br/>
+
+<input type="submit" name="deleteclassesbutton" value="Delete"/>	
+<br/>
+<br/>
+<button name="displayallclasses" type="submit" value="Display All">Display All Classes</button>
+
+</form>
+
+</div>
+
+<!-- CLASS MANAGEMENT FORM -->
+<h2>MANAGE CLASSES, SUBJECTS & TEACHERS</h2>
+<div class="classmanagementdiv">
+<form action="ClassManagementServlet">
+<b>ASSIGN SUBJECTS AND TEACHERS TO CLASS (Only use existing IDs)</b><br/>
+classID : <input type = "text" name = "classidmanagement"/> <br/>
+SubjectID : <input type = "text" name = "subjectidmanagement"/> <br/>
+TeacherID : <input type = "text" name = "teacheridmanagement"/> <br/>
+
+<input type="submit" name="classmanagementassign" value="Assign"/> <br/>
+
+</form>
+<br/>
+<form action="ClassManagementServlet">
+<b>DELETE AN ASSIGNMENT</b><br/>
+classID : <input type = "text" name = "classidmanagementdelete"/> <br/>
+SubjectID : <input type = "text" name = "subjectidmanagementdelete"/> <br/>
+TeacherID : <input type = "text" name = "teacheridmanagementdelete"/> <br/>
+
+<input type="submit" name="classmanagementdelete" value="Delete"/> 
+<br/>
+<br/>
+<button name="displayallassignments" type="submit" value="Display All">Display All Assignments</button><br/>
+
+</form>
+<br/>
+<form action="ClassManagementServlet">
+<b>FULL CLASS REPORT: ENTER THE ID OF THE CLASS YOU WANT TO SEE</b><br/>
+classID : <input type = "text" name = "classidreport"/>
+<input type="submit" name="classmanagementreport" value="See Report"/> <br/>
+</form>
+</div>
+
+<!-- StudentFORM -->
+<h2>MANAGE STUDENTS</h2>
+<div class="studentdiv">
+<form action="StudentServlet">
+<b>ADD STUDENT - Use an existing ClassID</b><br/>
+StudentID : <input type = "text" name = "studentid"/> <br/>
+StudentFname : <input type = "text" name = "studentfname"/> <br/>
+StudentLname : <input type = "text" name = "studentlname"/> <br/>
+AssignedClassID : <input type = "text" name = "associatedcid"/> <br/>
+
+<input type="submit" name="addstudentbutton" value="Add"/>	
+
+</form>
+<br/>
+<form action="StudentServlet">
+<b>UPDATE STUDENT</b><br/>
+StudentID : <input type = "text" name = "studentidupdate"/> <br/>
+StudentFname : <input type = "text" name = "studentfnameupdate"/> <br/>
+StudentLname : <input type = "text" name = "studentlnameupdate"/> <br/>
+AssignedClassID : <input type = "text" name = "associatedcidupdate"/> <br/>
+
+<input type="submit" name="updatestudentbutton" value="Update"/>	
+
+</form>
+<br/>
+<form action="StudentServlet">
+<b>DELETE STUDENT</b><br/>
+StudentID : <input type = "text" name = "studentiddelete"/> <br/>
+
+<input type="submit" name="deletestudentbutton" value="Delete"/>	
+<br/>
+<br/>
+<button name="displayallstudents" type="submit" value="Display All Students">Display All Students</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

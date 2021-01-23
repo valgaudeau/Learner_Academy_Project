@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+</head>
+<body>
+<h1>Welcome to Learner's Academy!</h1>
+<h2>Please enter your admin username and password below</h2>
+
+<div class="loginDiv">
+<form action="LoginServlet" method="post">
+
+Username : <input type="text" name="usernameinput"/><br/>
+<!-- Note that input type="password" below, which is a special type that hides what the user is entering in the field -->
+Password <input type="password" name="passwordinput"/><br/>
+
+<button name="login" type="submit" value="login">Login</button>
+
+</form>
+</div>
+
+</body>
+</html>
